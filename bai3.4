@@ -11,7 +11,7 @@ namespace ConsoleApp1
             for (int i = 0; i < a; i++)
             {
                 Console.WriteLine($"Nhap gia tri cho phan tu thu {i + 1}");
-                Console.ReadKey();
+                
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int value))
                 {
@@ -20,7 +20,7 @@ namespace ConsoleApp1
                 else
                 {
                     Console.WriteLine("Khong hop le, nhap lai di bro");
-                    Console.ReadKey();
+                    
                     i--;
 
                 }
@@ -30,7 +30,7 @@ namespace ConsoleApp1
             for (int j = 0; j < a; j++)
             {
                 Console.WriteLine($"{mang[j]}");
-                Console.ReadKey();
+            
             }
             Console.WriteLine("Phan tu can kiem tra: ");
             int l = int.Parse(Console.ReadLine());
