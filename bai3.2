@@ -25,10 +25,11 @@ namespace ConsoleApp2
 
 
         }
-
+//SolveLinearEquation là hàm để giải hệ phương trình tuyến tính với 2 biến.
         static void SolveLinearEquation(double a, double b, double c, double d, double g, double h)
         {
-            double determinant = a * g - b * d;
+            double determinant = a * g - b * d; 
+            //Hàm sử dụng determinant để kiểm tra, nếu determinant = 0 thì hệ phương trình có vô số nghiệm hoặc vô nghiệm. Phép tính của biến này là a1*b2 - a2*b1 với a,b là hệ số của 2 phương trình.
 
             if (determinant == 0) {
                 Console.WriteLine("he phuong trinh vo nghiem hoac vo so nghiem");
@@ -36,6 +37,7 @@ namespace ConsoleApp2
             {
                 double x = (c * g - h * b)/ determinant;
                 double y = (a * h - d * c)/ determinant;
+//Theo công thức cramer ta tính được x, y.                
 
                 Console.WriteLine($"nghiem bang: x ={x}, y = {y}");
                 Console.ReadKey();  
