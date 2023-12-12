@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ax^2 + By = C. Nhap A,B,C");
+            double a = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+            double c = double.Parse(Console.ReadLine());
+
+            double d = 0;
+            double x = 0;
+            if(a == 0)
+            {
+                x = c / b; 
+                Console.WriteLine($"x = {x}");    
+                Console.ReadKey();
+            }
+            else 
+            {
+                d = (b*b) - (4*a*c);
+                if (d == 0)
+                {
+                    x = (-b / (2 * a));
+                    Console.WriteLine($"x = {x}");
+                    Console.ReadKey();
+                }
+                if (d > 0)
+                {
+                    double x1 = (-b + Math.Sqrt(d)) / (2 * a);
+                    double x2 = (-b - Math.Sqrt(d)) / (2 * a);
+                    Console.WriteLine($"x1 = {x1}");
+                    Console.WriteLine($"x2 = {x2}");
+                    Console.ReadKey();
+
+                } else
+                {
+                    Console.WriteLine("phuong trinh vo nghiem");
+                    Console.ReadKey();
+                }
+
+    }
+        }
+    }
+}
