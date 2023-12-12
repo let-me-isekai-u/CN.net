@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("nhap cac gia tri lan luot Ax + By =C");
+            double a = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+            double c = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("nhap cac gia tri lan luot Dx + Gy = H");
+            double d = double.Parse(Console.ReadLine());
+            double g = double.Parse(Console.ReadLine());
+            double h = double.Parse(Console.ReadLine());
+
+            SolveLinearEquation(a, b, c, d, g, h);
+
+
+        }
+
+        static void SolveLinearEquation(double a, double b, double c, double d, double g, double h)
+        {
+            double determinant = a * g - b * d;
+
+            if (determinant == 0) {
+                Console.WriteLine("he phuong trinh vo nghiem hoac vo so nghiem");
+            } else
+            {
+                double x = (c * g - h * b)/ determinant;
+                double y = (a * h - d * c)/ determinant;
+
+                Console.WriteLine($"nghiem bang: x ={x}, y = {y}");
+                Console.ReadKey();  
+            }
+
+        }
+
+    }
+}
