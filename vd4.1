@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static string NormalizeName(string input)
+        {
+            // Loại bỏ khoảng trắng ở đầu và cuối chuỗi
+            string trimmedData = input.Trim();
+
+            // Thay thế các vị trí có 2 ký tự khoảng trắng bằng 1 ký tự khoảng trắng
+            while (trimmedData.Contains("  "))
+            {
+                trimmedData = trimmedData.Replace("  ", " ");
+            }
+
+            // Cắt chuỗi thành mảng các từ
+            string[] words = trimmedData.Split(' ');
+
+            // Chuẩn hoá từng từ
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(words[i]))
+                {
+                    // Viết hoa chữ cái đầu tiên, chữ cái tiếp theo viết thường
+                    words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1).ToLower();
+                }
+            }
+
+            // Gộp các từ đã chuẩn hoá lại thành chuỗi mới
+            string normalizedString = string.Join(" ", words);
+
+            return normalizedString;
+        }
+        static void Main(string[] args)
+        {
+            // Nhập vào chuỗi họ tên
+            Console.Write("nhap ho ten: ");
+            string inputData = Console.ReadLine();
+
+            // Chuẩn hoá chuỗi
+            string normalizedData = NormalizeName(inputData);
+
+            // In kết quả
+            Console.WriteLine("da chuan hoa: " + normalizedData);
+            Console.ReadKey();
+        }
+    }
+}
