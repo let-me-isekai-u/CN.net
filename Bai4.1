@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        class Person
+        {
+            protected int age;
+            public void hello()
+            {
+                Console.WriteLine("Hello!");
+                
+            }
+
+            public void SetAge(int age)
+            {
+                this.age = age;
+            }
+
+        }
+
+        class Student : Person
+        {
+            public void Study()
+            {
+                Console.WriteLine("I'm studying");
+                Console.ReadKey();
+            }
+
+            public void ShowAge(int age)
+            {
+                Console.WriteLine($"My age is: {age} years old");
+            }
+        }
+
+        class Teacher : Person
+        {
+            public void Teach() 
+            {
+                Console.WriteLine("I'm teaching");
+                Console.ReadKey();
+            }
+        }
+        static void Main(string[] args)
+        {
+            Person nguoiMoi = new Person();
+            nguoiMoi.hello();
+
+            Student svMoi = new Student();
+            svMoi.SetAge(21);
+            svMoi.hello();
+            svMoi.ShowAge(21);
+
+            Teacher gvMoi = new Teacher();
+            gvMoi.SetAge(31);
+            gvMoi.hello();
+            gvMoi.Teach();
+
+            Console.ReadKey();
+        }
+    }
+}
