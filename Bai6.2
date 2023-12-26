@@ -1,0 +1,101 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        class NhanVien
+        {
+            public string Ten { get; set; }
+            public DateTime NgaySinh { get; set; }
+            public double Luong { get; set; }
+
+            public NhanVien(string ten, DateTime ngaySinh, double luong)
+            {
+                Ten = ten;
+                NgaySinh = ngaySinh;
+                Luong = luong;
+            }
+
+            public override string ToString()
+            {
+                return $"Ten {Ten}, Ngay sinh {NgaySinh.ToShortDateString()}, luong {Luong}";
+            }
+        }
+
+        class QuanLyNhanVien 
+        {
+            private List<NhanVien> danhSachNhanVien = new List<NhanVien>();
+
+            public void ThemNhanVien(NhanVien nhanVien)
+            {
+                danhSachNhanVien.Add(nhanVien);
+            }
+
+            public void HienThiDanhSach()
+            {
+                Console.WriteLine("Danh sach nhan vien:");
+                foreach (var nv in danhSachNhanVien)
+                {
+                    Console.WriteLine(nv);
+                }
+            }
+
+            public void SuaThongTin(string ten, DateTime ngaySinhMoi, double luongMoi)
+            {
+                NhanVien nhanVienCanSua = TimNhanVienTheoTen(ten);
+                if (nhanVienCanSua != null)
+                {
+                    nhanVienCanSua.NgaySinh = ngaySinhMoi;
+                    nhanVienCanSua.Luong = luongMoi;
+                    Console.WriteLine("Da update");
+                }
+                else
+                {
+                    Console.WriteLine("Khong thay nhan vien can sua");
+                }
+            }
+
+            public void XoaNhanVien(string ten)
+            {
+                NhanVien nhanVienCanXoa = TimNhanVienTheoTen(ten);
+                if (nhanVienCanXoa != null)
+                {
+                    danhSachNhanVien.Remove(nhanVienCanXoa);
+                    Console.WriteLine("nhan vien da bi kick");
+                }
+                else
+                {
+                    Console.WriteLine("Khong co nhan vien muon xoa");
+                }
+            }
+
+            private NhanVien TimNhanVienTheoTen(string ten)
+            {
+                return danhSachNhanVien.Find(nv => nv.Ten == ten);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            QuanLyNhanVien quanLy = new QuanLyNhanVien();
+            quanLy.ThemNhanVien(new NhanVien("Nguyen Van A", new DateTime(1990, 1, 1), 5000));
+            quanLy.ThemNhanVien(new NhanVien("Tran Thi B", new DateTime(1985, 5, 15), 6000));
+            quanLy.HienThiDanhSach();
+
+            quanLy.SuaThongTin("Nguyen Van A", new DateTime(1992, 2, 2), 5500);
+            quanLy.HienThiDanhSach();
+
+            quanLy.XoaNhanVien("Tran Thi B");
+            quanLy.HienThiDanhSach();
+
+            Console.ReadLine();
+            
+        }
+    }
+    }
+
