@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {   
+        class Hinh
+        {
+            protected double CD;
+            protected double CR;
+            protected double R;
+
+            
+        }
+
+        class HinhTron: Hinh
+        {
+            const double Pi = 3.14;
+            public void P(double R) 
+            {
+                double Chuvi = 2 * Pi * R;
+                Console.WriteLine($"Chu vi hinh tron la: {Chuvi}");
+                
+            }
+
+            public void S(double R)
+            {
+                double DienTich = Pi * R * R;
+                Console.WriteLine($"Dien tich hinh tron la: {DienTich}");
+                Console.ReadKey();
+            }
+        }
+
+        class HinhCN : Hinh
+        {
+            
+            public void P(double CR, double CD)
+            {
+                double Chuvi = 2 * (CD + CR);
+                Console.WriteLine($"Chu vi hinh vuong la: {Chuvi}");
+                
+            }
+            
+            public void S(double CR, double CD)
+            {
+                double DienTich = CR * CD;
+                Console.WriteLine($"Dien tich hinh vuong la: {DienTich}");
+                Console.ReadKey();
+            }
+        }
+
+
+        static void Main(string[] args)
+        {   
+            HinhTron ht = new HinhTron();
+            ht.P(3.5);
+            ht.S(3.5);
+
+            HinhCN hcn = new HinhCN();
+            hcn.P(5.0, 10.0);
+            hcn.S(5.0, 10.0);
+
+
+        }
+    }
+}
