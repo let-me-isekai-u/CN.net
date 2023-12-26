@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        class SinhVien
+        {
+            public string Ten { get; set; }
+            public string MaSo { get; set; }
+            public double DiemToan { get; set; }
+            public double DiemLy { get; set; }
+            public double DiemHoa { get; set; }
+
+            public SinhVien(string ten, string maSo, double diemToan, double diemLy, double diemHoa)
+            {
+                Ten = ten;
+                MaSo = maSo;
+                DiemToan = diemToan;
+                DiemLy = diemLy;
+                DiemHoa = diemHoa;
+            }
+
+            public double TinhTongDiem()
+            {
+                return DiemToan + DiemLy + DiemHoa;
+            }
+
+            public double TinhDiemTrungBinh()
+            {
+                return TinhTongDiem() / 3;
+            }
+
+            public string XepLoai()
+            {
+                double diemTrungBinh = TinhDiemTrungBinh();
+
+                if (diemTrungBinh >= 9)
+                {
+                    return "A+";
+                }
+                else if (diemTrungBinh >= 8)
+                {
+                    return "A";
+                }
+                else if (diemTrungBinh >= 7)
+                {
+                    return "B";
+                }
+                else if (diemTrungBinh >= 5)
+                {
+                    return "C";
+                }
+                else if (diemTrungBinh >= 4)
+                {
+                    return "D";
+                }
+                else 
+                { return "F"; }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            SinhVien sinhVien1 = new SinhVien("Nguyen Van A", "SV001", 9.0, 8.5, 7.5);
+            SinhVien sinhVien2 = new SinhVien("Tran Thi B", "SV002", 8.0, 7.5, 6.0);
+
+            HienThiThongTin(sinhVien1);
+            HienThiThongTin(sinhVien2);
+
+            Console.ReadLine();
+        }
+
+        static void HienThiThongTin(SinhVien sinhVien)
+        {
+            Console.WriteLine($"Ten: {sinhVien.Ten}");
+            Console.WriteLine($"MSV: {sinhVien.MaSo}");
+            Console.WriteLine($"Toan: {sinhVien.DiemToan}");
+            Console.WriteLine($"Ly: {sinhVien.DiemLy}");
+            Console.WriteLine($"Hoa: {sinhVien.DiemHoa}");
+            Console.WriteLine($"Total: {sinhVien.TinhTongDiem()}");
+            Console.WriteLine($"TB: {sinhVien.TinhDiemTrungBinh()}");
+            Console.WriteLine($"Xep loai: {sinhVien.XepLoai()}");
+            Console.WriteLine();
+        }
+    }
+    }
+
