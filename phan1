@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+        static int UsLn(int a, int b)
+        {
+            
+            while (b != 0)
+            {
+                int x = b;
+                b = a % b;
+                a = x;
+            }
+            return a;
+
+        }
+
+        static int BcNn(int a, int b)
+        {
+            int bc = (a * b) / UsLn(a, b);
+            return bc;
+
+
+        }
+
+        static void Main(string[] args)
+        {
+            double S = 0;
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i <= n; i++)
+            {
+                S = S + i;
+
+            }
+            Console.WriteLine($"{S}");
+
+            S = 0;
+
+            for (int i = 0; i <= n; i++) {
+                S = S + i * i;
+            }
+            Console.WriteLine($"{S}");
+            S = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                S = S + 1.0 / (2 * i);
+            }
+            Console.WriteLine($"{S}");
+
+            Console.WriteLine("nhap a va b");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Uoc chung lon nhat: " + UsLn(a, b));
+            Console.WriteLine("boi chung nho nhat: " + BcNn(a, b));
+
+            Console.WriteLine("nhap so tinh giai thua");
+            int gt = int.Parse(Console.ReadLine());
+            int kqgt = 1;
+            for(int i = 1; i<= gt; i++)
+            {
+                kqgt = kqgt * i;
+            }
+            Console.WriteLine($"giai thua la: {kqgt}");
+            Console.ReadKey();
+
+        }
+
+    }
+}
