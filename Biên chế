@@ -1,0 +1,82 @@
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Biên chế" Height="476" Width="1100">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" Width="310" Height="306" VerticalAlignment="Center" Margin="0,0,0,100">
+
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Label Height="28" Width="71" x:Name="Label1" Content="Loại vũ khí:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+
+                <ListBox Width="208" Height="30" Margin="0,30,0,0">Chọn loại trang bị</ListBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="69">
+                <Label Height="28" Width="71" x:Name="Label2" Content="Tên vũ khí:" RenderTransformOrigin="0.345,0.401" Margin="30,25,0,0" Background="White"/>
+
+                <ListBox Width="208" Height="30" Margin="0,25,0,0" >Chọn vũ khí</ListBox>
+                <ListBoxItem>Ak-47</ListBoxItem>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="57">
+                <Label Height="30" Width="71" x:Name="Label3" Content="Số lượng:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+                <TextBox Width="108" Height="27" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBox>
+            </StackPanel>
+
+
+
+        </StackPanel>
+
+        <StackPanel Width="310" Height="290" VerticalAlignment="Center" Margin="0,0,0,100">
+
+            <StackPanel Orientation="Horizontal" Height="63">
+                <Label Height="28" Width="71" x:Name="Label4" Content="Loại khí tài:" RenderTransformOrigin="0.345,0.401" Margin="30,25,0,0" Background="White"/>
+
+                <ListBox Width="208" Height="33" Margin="0,25,0,0">Chọn loại khí tài</ListBox>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal">
+                <Label Height="30" Width="71" x:Name="Label6" Content="Số lượng:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+                <TextBox Width="108" Height="27" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="88">
+                <Label Height="41" Width="71" x:Name="Label23" Content="Tên đơn vị:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+                <TextBox Width="209" Height="51" Margin="0,30,0,0" Text="Trung đội 6 - Đại đội 20 - Tiểu đoàn 1"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="20,15,0,0">
+                <Button x:Name="Button" HorizontalAlignment="Left" Height="50" Width="90" Margin="10,10,20,20">Xác nhận</Button>
+                <Button x:Name="Button3" HorizontalAlignment="Left" Height="50" Width="90" Margin="30,10,20,20" >Huỷ</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Width="351" Height="306" VerticalAlignment="Center" Margin="0,0,0,100">
+
+            <StackPanel Orientation="Horizontal" Height="58">
+                <Label Height="28" Width="89" x:Name="Label10" Content="Loại trang bị" RenderTransformOrigin="0.345,0.401" Margin="30,25,10,0" Background="White"/>
+
+                <ListBox Width="208" Height="30" Margin="0,25,0,0">Chọn loại trang bị</ListBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="67">
+                <Label Height="28" Width="84" x:Name="Label20" Content="Tên trang bị" RenderTransformOrigin="0.345,0.401" Margin="30,25,10,0" Background="White"/>
+
+                <ListBox Width="213" Height="30" Margin="0,25,0,0">Chọn trang bị</ListBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Height="30" Width="74" x:Name="Label31" Content="Số lượng:" RenderTransformOrigin="0.345,0.401" Margin="30,30,20,0" Background="White"/>
+                <TextBox Width="108" Height="27" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBox>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+
+</Window>
