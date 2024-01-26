@@ -9,22 +9,25 @@
     <StackPanel HorizontalAlignment="Center" Width="310" Height="336" VerticalAlignment="Center">
 
         <StackPanel Orientation="Horizontal">
-            <Label Height="30" Width="71" x:Name="Label1" Content="Loại khí tài:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+            <Label Height="30" Width="100" x:Name="Label1" Content="Tên khí tài :" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
 
-            <ComboBox Name="Combobox1" Height="30" Width="200" SelectedIndex="0" Margin="0,30,0,0" SelectionChanged="Combobox1_SelectionChanged">
+            <ComboBox Name="Combobox1" Height="30" Width="180" SelectedIndex="0" Margin="0,30,0,0">
 
-                <ComboBoxItem>Mặt nạ phòng độc</ComboBoxItem>
-                <ComboBoxItem>Đồ bảo hộ phóng xạ</ComboBoxItem>
-                <ComboBoxItem>Kính ngắm súng trường</ComboBoxItem>
+                <ComboBoxItem>Kính ngắm</ComboBoxItem>
+
                 <ComboBoxItem>Máy thông tin</ComboBoxItem>
-                <ComboBoxItem>Dây điện thoại</ComboBoxItem>
+
+                <ComboBoxItem>Dây điện cho máy thông tin</ComboBoxItem>
+
+                <ComboBoxItem>Rada</ComboBoxItem>
 
             </ComboBox>
         </StackPanel>
 
-        
+       
+
         <StackPanel Orientation="Horizontal">
-            <Label Height="30" Width="71" x:Name="Label3" Content="Số lượng:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
+            <Label Height="30" Width="100" x:Name="Label3" Content="Số lượng:" RenderTransformOrigin="0.345,0.401" Margin="30,30,0,0" Background="White"/>
             <TextBox Width="108" Height="27" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBox>
         </StackPanel>
 
